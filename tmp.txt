@@ -1,0 +1,28 @@
+select u.name 
+from 
+user u, follower f
+where
+f.following_user_id = u.user_id and
+f.follower_user_id = 2;
+
+
+API 3
+
+select u.username, t.tweet, t.date_time
+from user u, 
+follower f, 
+tweet t 
+where
+u.user_id in 
+(select 
+following_user_id 
+from
+follower 
+where
+follower_user_id = 1;
+);
+
+if(1)
+{
+    console.log("Hello")
+}
